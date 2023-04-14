@@ -1,0 +1,49 @@
+input[type="submit"], button {
+    background-color: black;
+    color: white;
+    padding: 7px;
+    border-radius: 6px;
+}
+
+#form,
+ol {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    align-items: flex-start;
+}
+
+#create {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    align-items: center;
+}
+
+#list {
+    margin-bottom: 5em;
+}
+
+.UD {
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+}
+
+.pUD {
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    justify-content: space-between;
+    /* border: 2px white solid; */
+    width: 30em;
+}
+
+.inputCreate{
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    justify-content: space-between;
+    /* border: 2px white solid; */
+    width: 15em;
+}
