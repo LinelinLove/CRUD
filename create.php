@@ -7,6 +7,12 @@ $prenom = filter_input(INPUT_POST, "prenom");
 $nom = filter_input(INPUT_POST, "nom");
 $methode = filter_input(INPUT_SERVER, "REQUEST_METHOD");
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST["created"])) {
+        create($methode, $prenom, $nom);
+    }
+}
+
 function create($methode, $prenom, $nom)
 {
 
@@ -43,18 +49,36 @@ function create($methode, $prenom, $nom)
             file_put_contents("personnes.json", $data);
             // http://php.net/file_put_contents
             // echo "<p>$prenom $nom a bien été ajouté !</p>";
+
+            header("Location: index.php");
+            exit; // Important pour arrêter l'exécution du script après la redirection
         }
     }
 }
 
-create($methode, $prenom, $nom);
-// $prenom = "";
-// $nom = "";
-
 ?>
 
-<link rel="stylesheet" href="style.css">
+<div class="form">
+    <h2>Ajouter une personne</h2>
+    <form method="post" action="create.php">
+        <div class="create">
+            <div class="inputForm">
+                <div class="inputCreate">
+                    <label for="prenom">Prénom : </label><input type="text" name="prenom" id="prenom" required minlength="3" placeholder="Chris">
+                </div>
+                <div class="inputCreate">
+                    <label for="nom">Nom : </label><input type="text" name="nom" id="nom" required minlength="3" placeholder="Lin">
+                </div>
+            </div>
 
-<!-- <form method="post" action="index.php">
-    <input type="submit" name="button" value="Retour" id="button" />
-</form> -->
+            <div>
+                <button><a class="btn" href="index.php">Retour</a></button>
+                <input type="submit" name="created" value="Ajouter une personne" />
+            </div>
+        </div>
+
+    </form>
+</div>
+
+
+<link rel="stylesheet" href="style.css">

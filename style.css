@@ -1,11 +1,38 @@
-input[type="submit"], button {
-    background-color: black;
-    color: white;
-    padding: 7px;
-    border-radius: 6px;
+body    {
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-#form,
+input[type="submit"],
+button {
+    background: linear-gradient(to bottom, #FEFEFE, #E7E7E7);
+    padding: 7px;
+    border-radius: 4px;
+    border-color: #DDDDDD;
+    cursor: pointer;
+}
+
+button a {
+    text-decoration: none;
+    color: inherit;
+
+}
+button a:hover {
+    color: inherit;
+}
+
+input[name="Update"], input[name="updated"], input[name="created"] {
+    background: linear-gradient(to bottom, #60C160, #52A552);
+    border-color: #4A944A;
+    color: white;
+}
+
+input[name="Delete"] {
+    background: linear-gradient(to bottom, #EE706C, #BE362F);
+    border-color: #AF3933;
+    color: white;
+}
+
+.form,
 ol {
     display: flex;
     flex-direction: column;
@@ -13,11 +40,23 @@ ol {
     align-items: flex-start;
 }
 
-#create {
+#container {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    row-gap: 10px;
+    /* border: 2px black solid; */
+
+}
+
+.create {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
     row-gap: 10px;
     align-items: center;
+    /* border: 2px black solid; */
+
 }
 
 #list {
@@ -30,20 +69,45 @@ ol {
     column-gap: 10px;
 }
 
-.pUD {
+.inputCreate {
     display: flex;
     flex-direction: row;
     column-gap: 10px;
     justify-content: space-between;
-    /* border: 2px white solid; */
-    width: 30em;
 }
 
-.inputCreate{
+.inputForm {
     display: flex;
-    flex-direction: row;
-    column-gap: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 10px;
     justify-content: space-between;
-    /* border: 2px white solid; */
-    width: 15em;
+}
+
+table {
+    border-spacing: 0;
+    border-collapse: separate;
+    border-radius: 5px;
+    border: 1px solid #DDDDDD;
+    text-align: left;
+}
+
+table th,
+table td {
+    padding: 5px 10px;
+}
+
+/* Apply a border to the right of all but the last column */
+table th:not(:last-child),
+table td:not(:last-child) {
+    border-right: 1px solid #DDDDDD;
+}
+
+table>tbody>tr:not(:last-child)>td,
+table th {
+    border-bottom: 1px solid #DDDDDD;
+}
+
+table tbody tr:hover{
+    background-color: #F5F5F5;
 }

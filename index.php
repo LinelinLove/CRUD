@@ -10,31 +10,34 @@
 </head>
 
 <body>
-    <!-- <div id="container"></div> -->
-    <?php include "create.php" ?>
-
-    <div id="list">
+    <div id="container">
         <h1>Liste de personnes :</h1>
-        <ol>
-            <?php include "read.php" ?>
-        </ol>
+
+        <div class="form">
+            <form method="post" action="create.php">
+                <input type="submit" name="created" value="Ajouter une personne" />
+            </form>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <!-- <th>E-mail</th>
+                    <th>Téléphone</th> -->
+                    <th>Edition</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php 
+                include "read.php"
+                ?>
+            </tbody>
+        </table>
     </div>
 
-    <div id="form">
-    <h2>Ajouter une personne : </h2>
-        <form method="post">
-            <div id="create">
-                <div class="inputCreate">
-                    <label for="prenom">Prénom : </label><input type="text" name="prenom" id="prenom" required minlength="3">
-                </div>
-                <div class="inputCreate">
-                    <label for="nom">Nom : </label><input type="text" name="nom" id="nom" required minlength="3">
-                </div>
-                <input type="submit" name="button" value="Create" id="button" />
-            </div>
-        </form>
-    </div>
 </body>
-<script src="script.js"></script>
+<!-- <script src="script.js"></script> -->
 
 </html>
