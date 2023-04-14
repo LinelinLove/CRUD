@@ -26,7 +26,7 @@
                     <th>Prénom</th>
                     <th>E-mail</th>
                     <th>Téléphone</th>
-                    <th>Edition</th>
+                    <th>Édition</th>
                 </tr>
             </thead>
             <tbody>
@@ -38,6 +38,5 @@
     </div>
 
 </body>
-<!-- <script src="script.js"></script> -->
 
 </html>

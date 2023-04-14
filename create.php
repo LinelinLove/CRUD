@@ -85,7 +85,11 @@ function create($methode, $prenom, $nom, $email, $tel)
             </div>
 
             <div>
-                <button><a class="btn" href="index.php">Retour</a></button>
+                <button>
+                    <!-- <div class="btn"> -->
+                        <a href="index.php">Retour</a>
+                    <!-- </div> -->
+                </button>
                 <input type="submit" name="created" value="Ajouter une personne" />
             </div>
         </div>

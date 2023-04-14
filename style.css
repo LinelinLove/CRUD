@@ -3,20 +3,28 @@ body {
 }
 
 input[type="submit"],
-button {
+button,
+.btn {
     background: linear-gradient(to bottom, #FEFEFE, #E7E7E7);
     padding: 7px;
     border-radius: 4px;
     border-color: #DDDDDD;
     cursor: pointer;
+    border-width: 1px;
 }
 
-button a {
+input[type="submit"]:hover,
+button:hover,
+.btn:hover {
+    background: linear-gradient(to top, #FEFEFE, #E7E7E7);
+}
+
+div a {
     text-decoration: none;
     color: inherit;
 }
 
-button a:hover {
+div a:hover {
     color: inherit;
 }
 
@@ -28,11 +36,22 @@ input[name="created"] {
     color: white;
 }
 
-input[name="Delete"] {
+input[name="Update"]:hover,
+input[name="updated"]:hover,
+input[name="created"]:hover {
+    background: linear-gradient(to top, #60C160, #52A552);
+}
+
+input[name="Delete"], input[name="deleted"] {
     background: linear-gradient(to bottom, #EE706C, #BE362F);
     border-color: #AF3933;
     color: white;
 }
+
+input[name="Delete"]:hover, input[name="deleted"]:hover {
+    background: linear-gradient(to top, #EE706C, #BE362F);
+}
+
 
 .form,
 ol {
@@ -47,7 +66,6 @@ ol {
     flex-direction: column;
     align-items: flex-start;
     row-gap: 10px;
-
 }
 
 .create {
@@ -77,6 +95,18 @@ ol {
     align-items: flex-start;
     row-gap: 10px;
     justify-content: space-between;
+}
+
+.text_delete {
+    color: #BE554D;
+    padding-left: 10px;
+}
+
+.delete {
+    background-color: #F2DEDE;
+    width: 100%;
+    border-radius: 7px;
+    border: 1px solid #EFD5D8;
 }
 
 table {

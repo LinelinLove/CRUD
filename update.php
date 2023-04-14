@@ -20,7 +20,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 function update($prenom, $nom, $email, $tel, $prenom_update, $nom_update, $email_update, $tel_update)
 {
 
-    // echo "coucou $prenom $nom (avant)";
     $personne = [
         'prenom' => $prenom,
         'nom' => $nom,
@@ -42,10 +41,6 @@ function update($prenom, $nom, $email, $tel, $prenom_update, $nom_update, $email
         $tab[$key]['email'] = $email_update;
         $tab[$key]['tel'] = $tel_update;
     }
-
-
-
-    // echo var_dump($tab);
 
     // Etape 4 : On réécrit complètement le fichier JSON :
     // 4-A : Transformer en string avec json_encode
