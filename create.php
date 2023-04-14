@@ -5,15 +5,17 @@
 
 $prenom = filter_input(INPUT_POST, "prenom");
 $nom = filter_input(INPUT_POST, "nom");
+$email = filter_input(INPUT_POST, "email");
+$tel = filter_input(INPUT_POST, "tel");
 $methode = filter_input(INPUT_SERVER, "REQUEST_METHOD");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST["created"])) {
-        create($methode, $prenom, $nom);
+        create($methode, $prenom, $nom, $email, $tel);
     }
 }
 
-function create($methode, $prenom, $nom)
+function create($methode, $prenom, $nom, $email, $tel)
 {
 
     if ($methode == "POST") {
@@ -21,7 +23,9 @@ function create($methode, $prenom, $nom)
 
             $personne = [
                 'prenom' => $prenom,
-                'nom' => $nom
+                'nom' => $nom,
+                'email' => $email,
+                'tel' => $tel,
             ];
 
             // Etape 1 : Récupérer le JSON dans le fichier JSON avec file_get_contents
@@ -66,8 +70,17 @@ function create($methode, $prenom, $nom)
                 <div class="inputCreate">
                     <label for="prenom">Prénom : </label><input type="text" name="prenom" id="prenom" required minlength="3" placeholder="Chris">
                 </div>
+
                 <div class="inputCreate">
                     <label for="nom">Nom : </label><input type="text" name="nom" id="nom" required minlength="3" placeholder="Lin">
+                </div>
+
+                <div class="inputCreate">
+                    <label for="email">E-mail : </label><input type="email" name="email" id="email" required minlength="3" placeholder="abc@de.fr">
+                </div>
+
+                <div class="inputCreate">
+                    <label for="tel">Téléphone : </label><input type="phone" name="tel" id="tel" required minlength="10" placeholder="0123456789">
                 </div>
             </div>
 

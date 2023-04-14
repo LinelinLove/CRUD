@@ -24,8 +24,8 @@
                 <tr>
                     <th>Nom</th>
                     <th>Prénom</th>
-                    <!-- <th>E-mail</th>
-                    <th>Téléphone</th> -->
+                    <th>E-mail</th>
+                    <th>Téléphone</th>
                     <th>Edition</th>
                 </tr>
             </thead>

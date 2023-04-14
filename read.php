@@ -13,11 +13,19 @@ function read($file)
         echo "<tr>";
 
         echo '<td>';
-        echo '</span> <span class="nom" value="', $personne["nom"], '">', $personne['nom'], '</span>';
+        echo '</span> <span>', $personne['nom'], '</span>';
         echo '</td>';
 
         echo '<td>';
-        echo '<span class="prenom" value="', $personne["prenom"], '">', $personne['prenom'];
+        echo '<span>', $personne['prenom'], '</span>';
+        echo '</td>';
+
+        echo '<td>';
+        echo '<span>', $personne['email'], '</span>';
+        echo '</td>';
+
+        echo '<td>';
+        echo '<span>', $personne['tel'], '</span>';
         echo '</td>';
 
         echo '<td>';
@@ -25,12 +33,17 @@ function read($file)
         echo '<form method="post" action="update.php">';
         echo '<input type="hidden" name="prenom" value="', $personne["prenom"], '" />';
         echo '<input type="hidden" name="nom" value="', $personne["nom"], '" />';
+        echo '<input type="hidden" name="email" value="', $personne["email"], '" />';
+        echo '<input type="hidden" name="tel" value="', $personne["tel"], '" />';
         echo '<input type="submit" name="Update" value="Modifier" />';
         echo '</form>';
 
         echo '<form method="post" action="delete.php">';
         echo '<input type="hidden" name="prenom" value="', $personne["prenom"], '" />';
         echo '<input type="hidden" name="nom" value="', $personne["nom"], '" />';
+        echo '<input type="hidden" name="email" value="', $personne["email"], '" />';
+        echo '<input type="hidden" name="tel" value="', $personne["tel"], '" />';
+
         echo '<input type="submit" name="Delete" value="Supprimer" />';
         echo '</form>';
         echo '</div>';

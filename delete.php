@@ -2,22 +2,26 @@
 
 $prenom = filter_input(INPUT_POST, "prenom");
 $nom = filter_input(INPUT_POST, "nom");
+$email = filter_input(INPUT_POST, "email");
+$tel = filter_input(INPUT_POST, "tel");
 $methode = filter_input(INPUT_SERVER, "REQUEST_METHOD");
-delete($methode, $prenom, $nom);
+delete($methode, $prenom, $nom, $email, $tel);
 
 // if (isset($_POST["prenom"]) && isset($_POST["nom"])) {
 //     $prenom = $_POST["prenom"];
 //     $nom = $_POST["nom"];
 // }
 
-function delete($methode, $prenom, $nom)
+function delete($methode, $prenom, $nom, $email, $tel)
 {
 
     if ($methode == "POST") {
 
         $personne = [
             'prenom' => $prenom,
-            'nom' => $nom
+            'nom' => $nom,
+            'email' => $email,
+            'tel' => $tel
         ];
 
         // Etape 1 : Récupérer le JSON dans le fichier JSON avec file_get_contents
@@ -26,8 +30,6 @@ function delete($methode, $prenom, $nom)
         // Etape 2 : Transformer le JSON en un tableau PHP : 
         // -> json_decode($contenuFichier, true)
         $tab = json_decode($personnes, true);
-        // $t = implode($tab);
-        // echo $t;
 
         // Etape 3 : Maintenant qu'on a un tableau, on supprime le produit à ce tableau :
         $key = array_search($personne, $tab);
@@ -41,7 +43,7 @@ function delete($methode, $prenom, $nom)
         
         // 4-B : Ecrire dans le fichier avec file_put_contents
         file_put_contents("personnes.json", $data);
-        echo "<p>$prenom $nom a bien été supprimé !</p>";
+        // echo "<p>$prenom $nom a bien été supprimé !</p>";
 
 
         // Ajout d'une redirection vers index.php
